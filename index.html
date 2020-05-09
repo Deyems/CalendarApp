@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+  <title>Calender | App</title>
+  <link
+  rel="stylesheet"
+  href="../../fontawesome-free-5.5.0-web/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <h1>Set Reminders for Yourself</h1>
+  <header>
+    <h2 class="month">May 2020</h2>
+    <span class="currentDay"></span>
+    <div class="dot-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="drop-down">
+      <ul>
+        <li><a class="create" href="#">Create Event</a></li>
+        <li><a class="edit" href="#">Edit Event</a></li>
+        <li><a class="delete" href="#">Delete Event</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="form-details">
+
+    <form class="" action="form.js" method="get">
+      <div class="controls">
+        <span class="close">&#x274C</span>
+        <span class="save">&#x2713</span>
+      </div>
+      <div class="inp-grp">
+        <label for="">Name</label>
+        <input type="text" id="event" placeholder="Event Name">
+      </div>
+
+      <div class="inp-grp">
+        <label for="">Location</label>
+        <input type="text" id="event" placeholder="Event Location">
+      </div>
+
+
+      <div class="sel-grp">
+        <div class="sel-grp-from">
+          <label for="">From</label>
+          <select class="from" name="">
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+          </select>
+        </div>
+        <div class="sel-grp-to">
+          <label for="">To</label>
+          <select class="to" name="">
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sel">
+        <label for="">Repitition</label>
+        <select class="to" name="">
+          <option value="onetime">Onetime</option>
+          <option value="repeated">Repeated</option>
+        </select>
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <main class="flip">
+    <div class="days-of-week title">
+      <div class="red">S</div>
+      <div class="">M</div>
+      <div class="">T</div>
+      <div class="">W</div>
+      <div class="">Th</div>
+      <div class="">F</div>
+      <div class="">S</div>
+    </div>
+
+    <div class="days-of-week days">
+
+    </div>
+
+  </main>
+
+  <div class="btns">
+    <button type="button" class="btn prev">&#8810 Prev</button>
+    <button type="button" class="btn next">Next &#8811</button>
+  </div>
+
+</body>
+
+</html>
