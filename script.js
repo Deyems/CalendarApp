@@ -1,17 +1,19 @@
 class Calendar {
   currDay = document.querySelector('.currentDay');
   dots = document.querySelector('.dot-container');
-  prev = document.querySelector('.prev');
-  next = document.querySelector('.next');
   month = document.querySelector('.month');
   btns = document.querySelector('.btns');
   dropdown = document.querySelector('.drop-down');
+
   createEvent = document.querySelector('.create');
   editEvent = document.querySelector('.edit');
   delEvent = document.querySelector('.delete');
+
   saveBtn = document.querySelector('.save');
   closeBtn = document.querySelector('.close');
+
   forms = document.querySelector('.form-details');
+  formControls = document.querySelector('.controls');
 
   // forms = null;
   calenderDaysTitle = document.querySelector('.title');
@@ -53,11 +55,14 @@ class Calendar {
     this.showWeekDayOnDom(this.getWhatMonth(),this.getWhatYear());
     this.btns.addEventListener('click',this.updateMonth);
     this.dots.addEventListener('click',this.dropDown);
-    this.createEvent.addEventListener('click',this.showForm);
+
+    this.dropdown.addEventListener('click',this.showForm);
+    this.formControls.addEventListener('click',this.saveORClose)
+    // this.createEvent.addEventListener('click',this.showForm);
     // this.editEvent.addEventListener('click',this.editForm);
     // this.deleteEvent.addEventListener('click',this.removeForm);
 
-    this.closeBtn.addEventListener('click',this.hideForm);
+    // this.closeBtn.addEventListener('click',this.hideForm);
     // this.saveBtn.addEventListener('click',this.saveEvent);
 
   } // End Of Run Method
@@ -189,16 +194,31 @@ class Calendar {
   }
 
   showForm = (e) => {
-    this.forms.classList.add('popup');
+    e.target.parentElement.parentElement.parentElement.classList.remove('drop');
+    if(e.target.className == 'create'){
+      this.forms.classList.add('popup');
+    }
+    if(e.target.className == 'edit'){
+      // this.forms.classList.add('popup');
+      //LOAD FORM
+    }
+    if(e.target.className == 'delete'){
+      // this.forms.classList.add('popup');
+      //LOAD EVENT TO DELETE
+    }
   }
 
-  hideForm = (e) => {
-    console.log(this.forms.classList);
-    this.forms.classList.remove('popup');
+  saveORClose = (e) => {
+    if(e.target.className == 'close'){
+      this.forms.classList.remove('popup');
+    }else{
+      //SAVE DETAILS TO LOCAL STORAGE
+      //CHECK FOR VALID INPUTS
+    }
   }
 
   createAForm = (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     e.target.href = `form.html`;
     console.log(e.target,'after');
   }

@@ -15,12 +15,13 @@ body{
   /*justify-content: center;*/
   align-items: center;
   overflow-x: scroll;
-  font-family: 'Lato' calibri sans-serif monospace;
 }
 
 body>*{
   min-width: 300px;
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
+  font-family: calibri, sans-serif;
+  /*border: 2px solid brown;*/
 }
 
 h1{
@@ -30,27 +31,41 @@ h1{
 }
 
 header{
-  background-color: rgba(240,10,80,0.78);
+  background-color: rgba(240,10,80,0.98);
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   /*width: 370px;*/
   position: relative;
+  border-radius: 5px 5px 0 0;
+}
+
+/*TRANSITON TO HEADER AND WHERE THE DAYS ARE*/
+header,main{
+  /*border: 3px solid skyblue;*/
+  transition: all 0.5s ease-in;
 }
 
 .month{
   justify-content: flex-start;
+  color: white;
 }
 
 .currentDay{
   display: block;
   justify-content: flex-end;
-  border: 1px solid #fff;
+  border: 0.5px solid #fff;
   border-radius: 5px;
   padding: 4px 8px;
   font-size: 1.1rem;
-  box-shadow: 0 4px 3px rgba(255,255,255,0.4);
+  font-weight: bold;
+  /*box-shadow: 0 4px 3px rgba(255,255,255,0.4);*/
+  color: skyblue;
+}
+
+.currentDay:hover{
+  /*box-shadow: 0 4px 3px rgba(255,255,255,0.4);*/
 }
 
 .dot-container{
@@ -81,12 +96,13 @@ header{
   background-color: #fff;
   transform: translate(120%,-80%);
   transition: transform 0.4s ease;
-  display: none;
+  /*display: none;*/
   opacity: 0;
+  z-index: 100;
 }
 
 .drop-down.drop{
-  display: block;
+  /*display: block;*/
   opacity: 1;
   transform: translate(0%,0%);
 }
@@ -98,26 +114,29 @@ header{
   width: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 3px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .drop-down li a{
   text-decoration: none;
   color: rgba(240,10,80,0.78);
   display: block;
-  padding: 5px 5px;
-  margin: 8px 0;
-  font-family: verdana;
-  /*border: 1px solid rgba(0,0,0,0.75);*/
+  padding: 10px 10px;
+  /*margin: 8px 0;*/
+  font-family: calibri;
 
+  /*border: 1px solid rgba(0,0,0,0.75);*/
+  /*height: 45px;*/
+}
+
+.drop-down li a:hover{
+  color: rgba(240,10,80,0.98);
 }
 
 main{
-  /*display: grid;*/
-  /*grid-template-rows: repeat(6,1fr);*/
-  /*border: 1px solid green;*/
-  /*grid-gap: 10px;*/
   text-align: center;
-  color: rgb(80,80,80);
   background-color: rgba(255,255,255,0.3);
 }
 
@@ -132,8 +151,10 @@ main{
   flex: 1;
   padding: 5px;
   /*background-color: rgba(255,255,255,0.3);*/
+  /*border-right: 1px solid rgba(200,200,200,0.7);*/
   border: 1px solid rgba(200,200,200,0.7);
   transition: background-color 0.4s ease-out;
+  color: red;
 }
 
 .days{
@@ -142,11 +163,17 @@ main{
   grid-template-columns: repeat(7,1fr);
 }
 
+.days a:first-of-type,.title>div:first-of-type{
+  /*border-left: 1px solid rgba(200,200,200,0.7);*/
+  /*border-bottom: 1px solid rgba(200,200,200,0.7);*/
+}
+
 .days a{
   padding: 5px;
+  /*border-right: 1px solid rgba(200,200,200,0.7);*/
   border: 1px solid rgba(200,200,200,0.7);
   transition: background-color 0.4s ease-out;
-  color: rgb(80,80,80);
+  color: #000;
 }
 
 .red{
@@ -292,10 +319,15 @@ select:focus{
   padding: 10px;
   font-size: 1.2rem;
   color: #fff;
-  background-color: rgba(240,10,80,0.78);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  background-color: rgba(240,10,80,0.98);
+  transition: all 0.3s ease;
 }
 
 .btn:focus{
   outline: none;
+}
+
+.btn:hover{
+  background-color: rgba(240,10,80,0.78);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
